@@ -1,0 +1,18 @@
+{
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "globals": {
+    "window": true,
+    "document": true,
+    "console": false,
+    "NodeList": true,
+    "localStorage": true,
+    "fetch": false
+  },
+  "rules": {
+    "no-param-reassign": 0,
+    "class-methods-use-this": 0,
+    "no-return-assign": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+  }
+}
