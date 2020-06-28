@@ -1,0 +1,8 @@
+@import "fonts";
+@import "variables";
+
+.main-container {
+  width: 100vw;
+  display: grid;
+  grid: 12fr / 2fr 10fr; 
+}
