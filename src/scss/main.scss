@@ -2,6 +2,7 @@
 @import "colors";
 @import "mixins";
 @import "keyframes";
+@import "modal";
 
 :root {
   font-size: 16px;
@@ -122,6 +123,7 @@ body {
 
         .location__link {
           align-self: center;
+          position: relative;
 
           a {
             font-family: 'MUSEOSANSCYRL 500', Arial, sans-serif;
@@ -135,6 +137,23 @@ body {
           &:hover a {
             color: lighten($link, 10%);
             text-shadow: 1px 1px 1px #fff;
+          }
+          
+          .map-window {
+            display: none;
+            position: absolute;
+            width: 40vw;
+            height: 40vh;
+            z-index: 99;
+            top: 2rem;
+            left: 0;
+            border-radius: 10px;
+            transition: 200ms;
+            
+          }
+          
+          &:hover .map-window {
+            display: block;
           }
         }
       }
@@ -414,6 +433,10 @@ body {
           height: 100%;
           padding: 1rem 2rem;
         }
+        
+        @media (max-width: 568px) {
+          width: 70vw;
+        }
       }
       
       .navigation__item {
@@ -432,6 +455,10 @@ body {
 
           @media (max-width: 991px) {
             font-size: 1.3rem;
+          }
+          
+          @media (max-width: 375px) {
+            font-size: 1rem;
           }
         }
         

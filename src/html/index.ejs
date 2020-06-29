@@ -25,7 +25,8 @@
                         <span>г. Брест, ул. Гоголя, д.65</span>
                     </div>
                     <div class="location__link">
-                        <a href="#">смотреть на карте</a>
+                        <a href="https://yandex.by/maps/153/brest/?from=api-maps&ll=23.698098%2C52.093374&mode=usermaps&origin=jsapi_2_1_74&um=constructor%3A54c7d08d1331b9607b4624222e808722f9e360e1f493cbfb7b7fbfa143c0c156&z=18" target="_blank">смотреть на карте</a>
+<!--                        <iframe class="map-window" src="https://yandex.ru/map-widget/v1/?um=constructor%3A54c7d08d1331b9607b4624222e808722f9e360e1f493cbfb7b7fbfa143c0c156&amp;source=constructor" width="600" height="600" frameborder="0"></iframe>-->
                     </div>
                 </div>
                 <div class="contacts">
@@ -74,6 +75,27 @@
                 </ul>
             </nav>
         </header>
+        <div class="order-modal">
+            <span class="close-icon">&#215;</span>
+            <p class="order-modal__title"><strong>Получите</strong> программу
+                обучения</p>
+            <p class="order-modal__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores aspernatur, consequuntur ea et mollitia nihil nisi quibusdam reiciendis sint!
+            </p>
+            <form action="#" class="order-modal__form">
+                <select name="order-select" id="order-select">
+                    <option value="" disabled selected>Повышение квалификации</option>
+                    <option value="Фронтенд разработчик">Фронтенд разработчик</option>
+                    <option value="Джаваскриптизер">Джаваскриптизер</option>
+                    <option value="Старший джаваскриптизер">Старший джаваскриптизер</option>
+                    <option value="Начинающий джаваскриптизер">Начинающий джаваскриптизер</option>
+                </select>
+                <input type="text" id="name" placeholder="Ваше имя">
+                <input type="text" id="phone" placeholder="Ваш номер телефона">
+                <button type="submit" id="submit">Получить
+                    программу</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

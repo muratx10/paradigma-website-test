@@ -7,3 +7,21 @@
     height: 100%;
   }
 }
+
+@keyframes popup {
+  0% {
+    transform: translate(-50%, -200%);
+  }
+  
+  50% {
+    transform: translate(-50%, 40%);
+  }
+
+  50% {
+    transform: translate(-50%, 70%);
+  }
+
+  100% {
+    transform: translate(-50%, 40%);
+  }
+}

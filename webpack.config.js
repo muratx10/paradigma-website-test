@@ -12,6 +12,10 @@ const conf = {
   devServer: {
     watchContentBase: true,
     overlay: true,
+    // watchOptions: {
+    //   aggregateTimeout: 300,
+    //   poll: true,
+    // },
   },
   module: {
     rules: [

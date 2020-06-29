@@ -21,3 +21,17 @@ document.querySelectorAll('.navigation__link').forEach((el) => {
     toggle(e);
   });
 });
+
+document.querySelector('.order__link').addEventListener('click', () => {
+  const popup = document.querySelector('.order-modal');
+  popup.classList.toggle('show-modal');
+  document.querySelector('.close-icon').addEventListener('click', () => {
+    popup.classList.remove('show-modal');
+    popup.style.display = 'none';
+  });
+});
+
+document.querySelector('#submit').addEventListener('click', (e) => {
+  document.querySelector('.order-modal').classList.remove('show-modal');
+  document.querySelector('.order-modal').style.display = 'none';
+});
