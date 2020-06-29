@@ -1,9 +1,9 @@
-@keyframes rotateIcon {
+@keyframes slide {
   from {
-    transform: rotate(0deg) translateY(-50%);
+    height: 0;
   }
   
   to {
-    transform: rotate(360deg) translateY(-50%);
+    height: 100%;
   }
 }
