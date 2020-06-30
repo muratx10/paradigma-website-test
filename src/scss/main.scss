@@ -36,6 +36,7 @@ main {
       @media (max-width: 768px) {
         width: 90%;
         max-width: unset;
+        padding: 0;
       }
 
       .title {
@@ -43,6 +44,10 @@ main {
 
         strong {
           font-family: 'MUSEOSANSCYRL 500', Arial, sans-serif;
+        }
+        
+        @media (max-width: 568px) {
+          font-size: 1.7rem;
         }
       }
 
@@ -67,10 +72,18 @@ main {
             box-shadow: 0 0 10px 1px lighten($link, 20%);
           }
         }
+        
+        @media (max-width: 568px) {
+          padding-left: 25px;
+        }
       }
 
       .get-card {
         position: relative;
+        
+        @media (max-width: 568px) {
+          text-align: center;
+        }
 
         img {
           position: absolute;
@@ -184,6 +197,10 @@ main {
     top: unset;
     bottom: -12%;
     left: 15%;
+  }
+  
+  @media (max-width: 475px) {
+    left: 20%;
   }
 
   .icon-info {
