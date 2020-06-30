@@ -1,15 +1,19 @@
 @import '../scss/colors';
 @import '../scss/keyframes';
 
-main {
+h2 {
+  font-size: 100%;
+  font-weight: normal;
+}
 
+main {
   .container {
     position: relative;
     display: grid;
-    grid: 1fr / repeat(2, 1fr);
     min-height: 600px;
+    grid: 1fr / repeat(2, 1fr);
 
-    @media (max-width:991px) {
+    @media (max-width: 991px) {
       grid: repeat(2, 1fr) / 1fr;
     }
 
@@ -24,14 +28,14 @@ main {
       max-width: 40vw;
       padding-left: 7rem;
 
-      @media (max-width:991px) {
-        max-width: unset;
+      @media (max-width: 991px) {
         width: 90%;
+        max-width: unset;
       }
 
-      @media (max-width:768px) {
-        max-width: unset;
+      @media (max-width: 768px) {
         width: 90%;
+        max-width: unset;
       }
 
       .title {
@@ -43,24 +47,23 @@ main {
       }
 
       .features {
-
         .features__item {
-          list-style: none;
-          margin: 1.5rem 0;
           position: relative;
+          margin: 1.5rem 0;
+          list-style: none;
 
           &:before {
-            content: '';
+            position: absolute;
+            top: 50%;
+            left: -1.8rem;
             display: block;
             width: 9px;
             height: 9px;
-            background: $link;
-            position: absolute;
-            left: -1.8rem;
-            top: 50%;
+            content: '';
             transform: translateY(-50%);
-            border-radius: 50%;
             border: 4px solid #FFF;
+            border-radius: 50%;
+            background: $link;
             box-shadow: 0 0 10px 1px lighten($link, 20%);
           }
         }
@@ -71,14 +74,14 @@ main {
 
         img {
           position: absolute;
-          right: -6vw;
           top: 0;
+          right: -6vw;
           width: 17vw;
           max-width: 210px;
 
-          @media (max-width:1110px) {
-            right: -9vw;
+          @media (max-width: 1110px) {
             top: 1vw;
+            right: -9vw;
           }
 
           @media (max-width: 768px) {
@@ -87,12 +90,13 @@ main {
         }
 
         button {
+          font-family: 'MUSEOSANSCYRL 500', Arial, sans-serif;
+          position: relative;
+          width: 26vw;
+          min-width: 250px;
+          max-width: 345px;
           height: 60px;
           margin-top: 10px;
-          width: 26vw;
-          max-width: 345px;
-          min-width: 250px;
-          font-family: 'MUSEOSANSCYRL 500', Arial, sans-serif;
           cursor: pointer;
           transition: 200ms;
           text-transform: uppercase;
@@ -100,9 +104,13 @@ main {
           border: 1px solid transparent;
           border-radius: 50px;
           background: rgb(247, 180, 180);
-          background: linear-gradient(180deg, rgba(247, 180, 180, 1) 0%, rgba(238, 147, 152, 1) 100%), 0 0 100px 10px lighten(#D6747B, 20%);
+          background: linear-gradient(
+              180deg,
+              rgba(247, 180, 180, 1) 0%,
+              rgba(238, 147, 152, 1) 100%
+          ),
+          0 0 100px 10px lighten(#D6747B, 20%);
           box-shadow: 0 4px 0 0 #D6747B;
-          position: relative;
 
           &:hover {
             transform: translateY(-3px);
@@ -111,13 +119,12 @@ main {
 
           &:hover.get-card:before {
             display: none;
-
           }
 
           &:active {
             transform: translateY(3px);
-            box-shadow: 0 1px 0 0 #D6747B;
             outline: none;
+            box-shadow: 0 1px 0 0 #D6747B;
           }
 
           &:focus {
@@ -126,21 +133,21 @@ main {
         }
 
         .button-text {
-          text-align: center;
           font-family: 'MUSEOSANSCYRL 500', Arial, sans-serif;
           font-size: 1rem;
-          color: #FFF;
           position: absolute;
           top: -10%;
           left: 10%;
+          text-align: center;
+          color: #FFF;
 
-          @media (max-width:768px) {
+          @media (max-width: 768px) {
             font-size: 0.825rem;
             top: 30%;
             left: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
             min-width: 175px;
+            transform: translate(-50%, -50%);
           }
         }
       }
@@ -150,12 +157,12 @@ main {
 
 .girl-image {
   position: absolute;
-  width: 50vw;
-  max-width: 700px;
-  min-width: 650px;
+  z-index: -2;
   right: 0;
   bottom: 0;
-  z-index: -2;
+  width: 50vw;
+  min-width: 650px;
+  max-width: 700px;
 
   img {
     width: 100%;
@@ -166,50 +173,58 @@ main {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
   transition: 200ms;
+  transform: translate(-50%, -50%);
 
   @media (max-width: 1230px) {
     left: 60%;
   }
 
-  @media (max-width:991px) {
-    left: 15%;
+  @media (max-width: 991px) {
     top: unset;
     bottom: -12%;
+    left: 15%;
   }
 
   .icon-info {
+    font-size: 2rem;
+    line-height: 40px;
+    position: absolute;
+    z-index: 5;
+    top: 170px;
+    right: -10px;
     display: block;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    line-height: 40px;
-    text-align: center;
-    color: #FFF;
-    font-size: 2rem;
-    background: rgb(247, 180, 180);
-    background: linear-gradient(180deg, rgba(247, 180, 180, 1) 0%, rgba(238, 147, 152, 1) 100%);
-    box-shadow: 3px 2px 1px 0 #D6747B, inset 0 0 3px 0 #D6747B;
     cursor: pointer;
     transition: 200ms;
-    position: absolute;
-    top: 170px;
-    right: -10px;
-    z-index: 5;
+    text-align: center;
+    color: #FFF;
+    border-radius: 50%;
+    background: rgb(247, 180, 180);
+    background: linear-gradient(
+        180deg,
+        rgba(247, 180, 180, 1) 0%,
+        rgba(238, 147, 152, 1) 100%
+    );
+    box-shadow: 3px 2px 1px 0 #D6747B, inset 0 0 3px 0 #D6747B;
 
     &:after {
-      content: '';
+      position: absolute;
+      z-index: -3;
+      top: 0;
+      left: 0;
       display: block;
       width: 110%;
       height: 110%;
-      background: linear-gradient(180deg, rgba(247, 180, 180, 1) 0%, rgba(238, 147, 152, 1) 100%);
+      content: '';
       animation: pulse 1.2s ease infinite;
       border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -3;
+      background: linear-gradient(
+          180deg,
+          rgba(247, 180, 180, 1) 0%,
+          rgba(238, 147, 152, 1) 100%
+      );
     }
 
     &:hover {
@@ -219,8 +234,8 @@ main {
 
     &:active {
       transform: translateY(3px);
-      box-shadow: 0 1px 0 0 #D6747B;
       outline: none;
+      box-shadow: 0 1px 0 0 #D6747B;
     }
 
     &:focus {
@@ -229,34 +244,34 @@ main {
   }
 
   .info-text {
+    font-family: 'MUSEOSANSCYRL 300', Arial, sans-serif;
+    font-size: 1rem;
     position: absolute;
+    z-index: 1;
     top: -23%;
     right: -105%;
-    z-index: 1;
     width: 130px;
     height: 180px;
-    background: #FFF;
-    font-family: 'MUSEOSANSCYRL 300', Arial, sans-serif;
     padding: 2rem;
     text-align: center;
-    font-size: 1.1rem;
+    opacity: 0;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    opacity: 0;
+    border-bottom-left-radius: 10px;
+    background: #FFF;
 
     &:after {
-      content: '';
-      width: 100%;
-      height: 100%;
+      position: absolute;
       top: -10px;
       right: -10px;
+      width: 100%;
+      height: 100%;
+      content: '';
       border-top-left-radius: 50px;
       border-top-right-radius: 50px;
-      border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
-      position: absolute;
+      border-bottom-left-radius: 10px;
       background-color: rgba(255, 255, 255, 0.5);
     }
   }

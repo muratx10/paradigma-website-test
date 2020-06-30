@@ -1,9 +1,9 @@
-import '../scss/header.scss';
-import '../scss/main.scss';
-import logo from '../assets/images/logo.png';
-import girl from '../assets/images/girl.png'
 import branchImg from '../assets/images/branch.png';
 import info from '../assets/images/card.png';
+import girl from '../assets/images/girl.png';
+import logo from '../assets/images/logo.png';
+import '../scss/header.scss';
+import '../scss/main.scss';
 
 document.querySelector('.logo img').src = logo;
 document.querySelector('.girl-image img').src = girl;
@@ -38,13 +38,13 @@ document.querySelector('.order__link').addEventListener('click', () => {
   });
 });
 
-document.querySelector('#submit').addEventListener('click', (e) => {
+document.querySelector('#submit').addEventListener('click', () => {
   document.querySelector('.order-modal').classList.remove('show-modal');
   document.querySelector('.order-modal').style.display = 'none';
   document.querySelector('.submit-modal').classList.toggle('show-modal');
 });
 
-document.addEventListener('click', e => {
+document.addEventListener('click', (e) => {
   e.preventDefault();
   const submitPopup = document.querySelector('.submit-modal');
   if (e.target.closest('.show-modal')) {

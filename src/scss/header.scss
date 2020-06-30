@@ -1,8 +1,8 @@
-@import "fonts";
-@import "colors";
-@import "mixins";
-@import "keyframes";
-@import "modal";
+@import 'fonts';
+@import 'colors';
+@import 'mixins';
+@import 'keyframes';
+@import 'modal';
 
 :root {
   font-size: 16px;
@@ -15,33 +15,48 @@
 }
 
 body {
+  position: relative;
   box-sizing: border-box;
   width: 100vw;
   margin: 0;
   padding: 3rem;
   background: url('../assets/images/main_bg.png') no-repeat;
   background-size: 100% 100%;
-  position: relative;
 
   @media (max-width: 670px) {
     padding: 0;
   }
 
   &:after {
-    content: '';
-    width: 100%;
-    height: 9vw;
-    background: url('../assets/images/wave.svg') no-repeat bottom center;
-    background-size: 100% 100%;
     position: absolute;
     z-index: 99;
-    left: 0rem;
     bottom: 0;
+    left: 0rem;
+    width: 100%;
+    height: 9vw;
     margin-bottom: -3vw;
+    content: '';
+    background: url('../assets/images/wave.svg') no-repeat bottom center;
+    background-size: 100% 100%;
 
-    @media (max-width:991px) {
+    @media (max-width: 991px) {
       margin-bottom: -1vw;
     }
+  }
+
+  &:before {
+    position: absolute;
+    top: 20vh;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    opacity: .5;
+    background-image: url('../assets/images/vector_smart.png'), url('../assets/images/vector_smart.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, 88vw 0;
+    z-index: -3;
   }
 }
 
@@ -71,10 +86,9 @@ body {
       }
 
       .title {
-
         h1 {
           font-family: 'MUSEOSANSCYRL 200', Arial, sans-serif;
-          font-size: .875rem;
+          font-size: 0.875rem;
           max-width: 50%;
           color: $main;
 
@@ -139,39 +153,37 @@ body {
 
           span:nth-child(2) {
             font-family: 'MUSEOSANSCYRL 200', Arial, sans-serif;
-            ;
           }
         }
 
         .location__link {
-          align-self: center;
           position: relative;
+          align-self: center;
 
           a {
             font-family: 'MUSEOSANSCYRL 500', Arial, sans-serif;
+            transition: 150ms;
             text-decoration: none;
             text-transform: uppercase;
             color: $link;
             border-bottom: 1px dashed $link;
-            transition: 150ms;
           }
 
           &:hover a {
             color: lighten($link, 10%);
-            text-shadow: 1px 1px 1px #fff;
+            text-shadow: 1px 1px 1px #FFF;
           }
 
           .map-window {
-            display: none;
             position: absolute;
-            width: 40vw;
-            height: 40vh;
             z-index: 99;
             top: 2rem;
             left: 0;
-            border-radius: 10px;
+            display: none;
+            width: 40vw;
+            height: 40vh;
             transition: 200ms;
-
+            border-radius: 10px;
           }
 
           &:hover .map-window {
@@ -190,11 +202,11 @@ body {
           color: $main;
 
           .icon {
-            @include icon("../assets/images/icon_phone.png");
+            @include icon('../assets/images/icon_phone.png');
           }
 
           .phone__label {
-            font-size: .75rem;
+            font-size: 0.75rem;
             position: relative;
 
             // green circle
@@ -229,7 +241,7 @@ body {
           color: $main;
 
           .icon {
-            @include icon("../assets/images/icon_time.svg");
+            @include icon('../assets/images/icon_time.svg');
           }
 
           .time {
@@ -247,7 +259,6 @@ body {
       }
 
       .order {
-
         @media (max-width: 1280px) {
           grid-area: order;
         }
@@ -314,79 +325,70 @@ body {
 
       @media (max-width: 1280px) {
         grid: 1fr 1fr / repeat(4, 1fr);
-        grid-template-areas: "logo title location contacts"
-          "logo title order order";
+        grid-template-areas: 'logo title location contacts' 'logo title order order';
       }
 
       @media (max-width: 1150px) {
         grid: 1fr 1fr / repeat(6, 1fr);
-        grid-template-areas: "logo logo logo title title title"
-          "location location contacts contacts order order";
+        grid-template-areas: 'logo logo logo title title title' 'location location contacts contacts order order';
       }
 
       @media (max-width: 768px) {
-        grid: repeat(3, 1fr) / repeat(2, 1fr);
-        grid-template-areas: "logo title"
-          "location contacts"
-          "order order";
         width: unset;
+        grid: repeat(3, 1fr) / repeat(2, 1fr);
+        grid-template-areas: 'logo title' 'location contacts' 'order order';
       }
 
       @media (max-width: 568px) {
-        grid: repeat(5, 1fr) / 1fr;
-        grid-template-areas: "logo"
-          "title"
-          "location"
-          "contacts"
-          "order";
-        justify-items: flex-start;
         width: unset;
+        grid: repeat(5, 1fr) / 1fr;
+        grid-template-areas: 'logo' 'title' 'location' 'contacts' 'order';
+        justify-items: flex-start;
       }
 
-      @media (max-width:768px) {
+      @media (max-width: 768px) {
         width: unset;
       }
     }
 
     .navigation {
-
       .burger {
         display: none;
         border: 1px solid lighten($main, 50%);
 
         .burger__icon {
+          position: relative;
           display: block;
           width: 80%;
           height: 3px;
-          background: $main;
           margin: 0 auto;
-          border-radius: 5px;
-          transform: translateY(10px);
-          position: relative;
           transition: 200ms;
+          transform: translateY(10px);
+          border-radius: 5px;
+          background: $main;
 
           &:before {
-            content: '';
+            position: absolute;
+            top: 10px;
             display: block;
             width: 100%;
             height: 3px;
-            background: $main;
-            position: absolute;
-            border-radius: 5px;
-            top: 10px;
+            content: '';
             transition: 200ms;
+            border-radius: 5px;
+            background: $main;
           }
 
           &:after {
-            content: '';
-            display: block;
-            border-radius: 5px;
-            width: 100%;
-            height: 3px;
-            background: $main;
             position: absolute;
             top: 20px;
+            display: block;
+            width: 100%;
+            height: 3px;
+            content: '';
             transition: 200ms;
+            border-radius: 5px;
+            background: $main;
           }
         }
 
@@ -398,11 +400,11 @@ body {
 
         @media (max-width: 991px) {
           display: block;
-          background: #FFF;
-          border-radius: 7px;
           width: 45px;
           height: 45px;
           cursor: pointer;
+          border-radius: 7px;
+          background: #FFF;
         }
       }
 
@@ -411,42 +413,42 @@ body {
       }
 
       .burger-menu__active .burger__icon:before {
-        transform: rotate(-45deg);
         top: 10px;
+        transform: rotate(-45deg);
       }
 
       .burger-menu__active .burger__icon:after {
-        transform: rotate(45deg);
         top: 10px;
+        transform: rotate(45deg);
       }
 
       ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0;
-        background: #FFF;
-        height: 4vh;
-        min-height: 50px;
-        border-radius: 5px;
         position: relative;
         z-index: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 4vh;
+        min-height: 50px;
+        padding: 0;
         transition: 200ms;
         animation: slide 1s linear;
+        border-radius: 5px;
+        background: #FFF;
 
         &:before {
-          content: '';
-          display: block;
           position: absolute;
-          width: 99%;
-          height: 100%;
-          background: rgba(255, 255, 255, .5);
           z-index: -1;
-          border-radius: 5px;
           top: 12%;
           left: 50%;
+          display: block;
+          width: 99%;
+          height: 100%;
+          content: '';
           transform: translateX(-50%);
+          border-radius: 5px;
+          background: rgba(255, 255, 255, 0.5);
 
           @media (max-width: 991px) {
             display: none;
@@ -455,11 +457,11 @@ body {
 
         @media (max-width: 991px) {
           display: block;
-          min-height: unset;
-          animation: slide 1s linear;
           width: 80vw;
           height: 100%;
+          min-height: unset;
           padding: 1rem 2rem;
+          animation: slide 1s linear;
         }
 
         @media (max-width: 568px) {
@@ -471,11 +473,11 @@ body {
         display: inline-block;
 
         .navigation__link {
-          text-decoration: none;
           font-family: 'MUSEOSANSCYRL 400', Arial, sans-serif;
-          color: $main;
           font-size: 0.9375rem;
           transition: 150ms;
+          text-decoration: none;
+          color: $main;
 
           &:hover {
             color: $link;
@@ -505,8 +507,12 @@ body {
 
 .hidden {
   @media (max-width: 991px) {
-    transform: translateX(-200%);
     height: 0 !important;
     padding: 0 !important;
+    transform: translateX(-200%);
   }
+}
+
+iframe {
+  border: none;
 }
