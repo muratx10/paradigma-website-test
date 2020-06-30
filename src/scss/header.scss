@@ -22,6 +22,10 @@ body {
   padding: 3rem;
   background: url('../assets/images/main_bg.png') no-repeat;
   background-size: 100% 100%;
+  
+  @media (max-width: 374px) {
+    background: unset;
+  }
 
   @media (max-width: 670px) {
     padding: 0;

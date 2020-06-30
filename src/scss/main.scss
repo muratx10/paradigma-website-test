@@ -180,6 +180,10 @@ main {
   img {
     width: 100%;
   }
+  
+  @media (max-width: 374px) {
+    right: -75px;
+  }
 }
 
 .info {
