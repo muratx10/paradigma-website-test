@@ -27,3 +27,35 @@
   font-family: 'MUSEOSANSCYRL 700';
   src: url('../assets/fonts/MUSEOSANSCYRL.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../assets/fonts/icomoon.eot?2s29wi');
+  src: url('../assets/fonts/icomoon.eot?2s29wi#iefix') format('embedded-opentype'),
+    url('../assets/fonts/icomoon.ttf?2s29wi') format('truetype'),
+    url('../assets/fonts/icomoon.woff?2s29wi') format('woff'),
+    url('../assets/fonts/icomoon.svg?2s29wi#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-info:before {
+  content: "\e900";
+}
