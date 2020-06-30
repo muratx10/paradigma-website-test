@@ -63,3 +63,8 @@ document.querySelector('.icon-info').addEventListener('mouseout', () => {
   document.querySelector('.info-text').classList.remove('show-info');
   document.querySelector('.info-text').classList.add('hide-info');
 });
+
+document.addEventListener('scroll', () => {
+  const bg = document.querySelector('.bg');
+  bg.style.backgroundPosition = `0 ${window.pageYOffset / 8}px,88vw ${window.pageYOffset / 8}px`;
+});
